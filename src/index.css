@@ -13,7 +13,7 @@ All colors MUST be HSL.
   --card-foreground: hsl(140 25% 12%);
   --popover: hsl(45 30% 99%);
   --popover-foreground: hsl(140 25% 12%);
-  --primary: hsl(140 35% 22%);
+  --primary: hsl(140 30% 30%);
   --primary-foreground: hsl(45 35% 97%);
   --secondary: hsl(80 25% 88%);
   --secondary-foreground: hsl(140 35% 18%);
@@ -29,11 +29,11 @@ All colors MUST be HSL.
   --radius: 1rem;
 
   /* Custom Bambu palette tokens */
-  --bamboo: hsl(85 40% 50%);
-  --bamboo-light: hsl(85 45% 75%);
-  --forest: hsl(140 35% 22%);
-  --forest-deep: hsl(150 40% 14%);
-  --moss: hsl(95 25% 38%);
+  --bamboo: hsl(85 45% 55%);
+  --bamboo-light: hsl(85 50% 78%);
+  --forest: hsl(140 28% 34%);
+  --forest-deep: hsl(150 32% 22%);
+  --moss: hsl(95 28% 48%);
   --sand: hsl(40 35% 88%);
   --earth: hsl(28 30% 45%);
   --cream: hsl(45 50% 96%);
