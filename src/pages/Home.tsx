@@ -20,6 +20,9 @@ import {
   events,
   directory,
   posts,
+  heroImage,
+  valeImage,
+  peitoPomboImage,
 } from '@/data/bambu';
 
 const fadeUp = {
@@ -77,8 +80,8 @@ export default function Home() {
       <section id="hero" className="relative min-h-[100svh] w-full overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=2400&q=80"
-            alt="Floresta de Mata Atlântica no Sana"
+            src={heroImage}
+            alt="Cachoeira do Sana, Macaé — RJ"
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-forest-deep/40 via-forest-deep/15 to-forest-deep/65" />
@@ -152,8 +155,8 @@ export default function Home() {
           <motion.div {...fadeUp} className="relative">
             <div className="relative rounded-[2rem] overflow-hidden shadow-organic">
               <img
-                src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?auto=format&fit=crop&w=1200&q=80"
-                alt="Bambuzal no Sana"
+                src={peitoPomboImage}
+                alt="Vista do Peito do Pombo, Sana"
                 className="w-full h-[520px] object-cover"
               />
             </div>
@@ -324,8 +327,8 @@ export default function Home() {
             <div className="relative rounded-[2rem] overflow-hidden glass-dark p-2 shadow-organic">
               <div className="relative rounded-[1.6rem] overflow-hidden h-[420px]">
                 <img
-                  src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1600&q=80"
-                  alt="Mapa do vale do Sana"
+                  src={valeImage}
+                  alt="Vale do Sana, Macaé — RJ"
                   className="h-full w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-forest-deep/40" />
@@ -498,7 +501,10 @@ export default function Home() {
       {/* CTA Final */}
       <section className="relative py-24 md:py-32 px-6 lg:px-10 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-forest animate-flow opacity-85" />
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&w=2000&q=70')] bg-cover bg-center opacity-30 mix-blend-overlay" />
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-overlay"
+          style={{ backgroundImage: `url(${heroImage})` }}
+        />
         <div className="relative max-w-4xl mx-auto text-center text-cream">
           <Droplets className="mx-auto size-8 text-bamboo animate-sway" />
           <h2 className="mt-6 font-serif text-4xl md:text-6xl text-balance">
