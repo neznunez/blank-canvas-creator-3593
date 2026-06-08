@@ -265,10 +265,10 @@ All colors MUST be HSL.
   .shadow-soft { box-shadow: var(--shadow-soft); }
 
   .glass {
-    background: hsl(var(--card) / 0.6);
+    background: color-mix(in oklab, var(--card) 70%, transparent);
     backdrop-filter: blur(16px) saturate(140%);
     -webkit-backdrop-filter: blur(16px) saturate(140%);
-    border: 1px solid hsl(var(--border) / 0.5);
+    border: 1px solid color-mix(in oklab, var(--border) 60%, transparent);
   }
 
   .glass-dark {
