@@ -1,71 +1,99 @@
-import { Instagram, Linkedin } from 'lucide-react';
+import { Instagram, Linkedin, Mail, MapPin, Leaf } from 'lucide-react';
 import { photographerInfo } from '@/data/photographer';
-import { Separator } from '@/components/ui/separator';
+import { navLinks } from '@/data/bambu';
 
-/**
- * Minimal footer component with social links and copyright
- */
 export function Footer() {
-  const currentYear = new Date().getFullYear();
-
+  const year = new Date().getFullYear();
   return (
-    <footer className="border-t border-border">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          {/* Copyright */}
-          <p className="text-sm text-muted-foreground font-light tracking-wide">
-            © {currentYear} {photographerInfo.name}. All rights reserved.
-          </p>
+    <footer id="contato" className="relative overflow-hidden bg-forest-deep text-cream">
+      <div className="absolute inset-0 opacity-30 bg-gradient-forest animate-flow" />
+      <div className="absolute -top-32 -right-32 size-96 rounded-full bg-bamboo/20 blur-3xl" />
+      <div className="absolute -bottom-32 -left-32 size-96 rounded-full bg-moss/30 blur-3xl" />
 
-          {/* Social Links */}
-          <div className="flex items-center gap-6">
-            {photographerInfo.socialLinks.instagram && (
-              <a
-                href={photographerInfo.socialLinks.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="size-5" />
-              </a>
-            )}
-            {photographerInfo.socialLinks.linkedin && (
-              <a
-                href={photographerInfo.socialLinks.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="size-5" />
-              </a>
-            )}
-            {photographerInfo.socialLinks.behance && (
-              <a
-                href={photographerInfo.socialLinks.behance}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-                aria-label="Behance"
-              >
-                <svg
-                  className="size-5"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M3 8h6a3 3 0 0 1 0 6H3V8z" />
-                  <path d="M3 14h7a3 3 0 0 1 0 6H3v-6z" />
-                  <path d="M14 7h7" />
-                  <path d="M17 8a3 3 0 1 1 0 6 3 3 0 0 1 0-6z" />
-                </svg>
-              </a>
-            )}
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-10 py-20 grid gap-12 lg:grid-cols-4">
+        <div className="lg:col-span-2 space-y-5">
+          <div className="flex items-center gap-2">
+            <span className="inline-flex items-center justify-center size-10 rounded-full bg-bamboo/30">
+              <Leaf className="size-5" />
+            </span>
+            <span className="font-serif text-2xl">Bambu do Sana</span>
           </div>
+          <p className="font-serif italic text-2xl leading-snug max-w-md text-cream/90">
+            Um movimento ecológico, cultural e comunitário no coração da Mata Atlântica.
+          </p>
+          <p className="text-sm text-cream/70 max-w-md">
+            Receba histórias, eventos e novidades do vale do Sana diretamente no seu e-mail.
+          </p>
+          <form
+            onSubmit={(e) => e.preventDefault()}
+            className="flex items-center gap-2 rounded-full glass-dark p-1.5 max-w-md"
+          >
+            <input
+              type="email"
+              required
+              placeholder="seu@email.com"
+              className="flex-1 bg-transparent px-4 py-2 text-sm placeholder:text-cream/50 focus:outline-none"
+            />
+            <button className="rounded-full bg-bamboo px-5 py-2 text-sm font-medium text-forest-deep hover:bg-bamboo-light transition-colors">
+              Assinar
+            </button>
+          </form>
+        </div>
+
+        <div>
+          <h4 className="font-serif text-lg mb-4">Navegar</h4>
+          <ul className="space-y-2 text-sm text-cream/80">
+            {navLinks.map((l) => (
+              <li key={l.href}>
+                <a href={l.href} className="hover:text-bamboo transition-colors">
+                  {l.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="font-serif text-lg mb-4">Contato</h4>
+          <ul className="space-y-3 text-sm text-cream/80">
+            <li className="flex items-start gap-2">
+              <MapPin className="size-4 mt-0.5 text-bamboo" />
+              {photographerInfo.location}
+            </li>
+            <li className="flex items-start gap-2">
+              <Mail className="size-4 mt-0.5 text-bamboo" />
+              <a href={`mailto:${photographerInfo.email}`} className="hover:text-bamboo">
+                {photographerInfo.email}
+              </a>
+            </li>
+          </ul>
+          <div className="flex gap-3 mt-5">
+            <a
+              href={photographerInfo.socialLinks.instagram}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+              className="size-9 rounded-full glass-dark inline-flex items-center justify-center hover:bg-bamboo hover:text-forest-deep transition-colors"
+            >
+              <Instagram className="size-4" />
+            </a>
+            <a
+              href={photographerInfo.socialLinks.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+              className="size-9 rounded-full glass-dark inline-flex items-center justify-center hover:bg-bamboo hover:text-forest-deep transition-colors"
+            >
+              <Linkedin className="size-4" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="relative border-t border-cream/10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex flex-col md:flex-row justify-between gap-2 text-xs text-cream/60">
+          <p>© {year} Bambu do Sana. Feito com cuidado pela comunidade.</p>
+          <p className="italic">Ecoturismo regenerativo • Sana, RJ • Brasil</p>
         </div>
       </div>
     </footer>
