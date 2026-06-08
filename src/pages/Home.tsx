@@ -81,7 +81,7 @@ export default function Home() {
             alt="Floresta de Mata Atlântica no Sana"
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-forest-deep/70 via-forest-deep/40 to-forest-deep/85" />
+          <div className="absolute inset-0 bg-gradient-to-b from-forest-deep/40 via-forest-deep/15 to-forest-deep/65" />
           <div className="absolute inset-0 bg-gradient-leaf mix-blend-soft-light" />
         </div>
 
@@ -292,7 +292,7 @@ export default function Home() {
         id="mapa"
         className="relative py-24 md:py-32 px-6 lg:px-10 bg-forest text-cream overflow-hidden"
       >
-        <div className="absolute inset-0 bg-gradient-forest opacity-90" />
+        <div className="absolute inset-0 bg-gradient-forest opacity-80" />
         <div className="absolute -top-40 -left-20 size-[30rem] rounded-full bg-bamboo/20 blur-3xl animate-float-slow" />
         <div className="absolute bottom-0 right-0 size-[26rem] rounded-full bg-moss/40 blur-3xl animate-float-slow [animation-delay:-3s]" />
         <div className="relative max-w-7xl mx-auto grid lg:grid-cols-5 gap-10 items-center">
@@ -497,8 +497,8 @@ export default function Home() {
 
       {/* CTA Final */}
       <section className="relative py-24 md:py-32 px-6 lg:px-10 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-forest animate-flow" />
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&w=2000&q=70')] bg-cover bg-center opacity-20 mix-blend-overlay" />
+        <div className="absolute inset-0 bg-gradient-forest animate-flow opacity-85" />
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&w=2000&q=70')] bg-cover bg-center opacity-30 mix-blend-overlay" />
         <div className="relative max-w-4xl mx-auto text-center text-cream">
           <Droplets className="mx-auto size-8 text-bamboo animate-sway" />
           <h2 className="mt-6 font-serif text-4xl md:text-6xl text-balance">
