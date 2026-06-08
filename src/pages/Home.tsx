@@ -84,7 +84,7 @@ export default function Home() {
             alt="Cachoeira do Sana, Macaé — RJ"
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-forest-deep/40 via-forest-deep/15 to-forest-deep/65" />
+          <div className="absolute inset-0 bg-gradient-to-b from-forest-deep/55 via-forest-deep/30 to-forest-deep/80" />
           <div className="absolute inset-0 bg-gradient-leaf mix-blend-soft-light" />
         </div>
 
@@ -104,8 +104,8 @@ export default function Home() {
                 <Leaf className="size-3.5 text-bamboo animate-sway" />
                 Sana • Rio de Janeiro • Brasil
               </span>
-              <h1 className="mt-6 font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-cream leading-[1.02] text-balance">
-                Bambu <span className="italic text-bamboo">do</span> Sana
+              <h1 className="mt-6 font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[1.02] text-balance drop-shadow-[0_4px_24px_rgba(0,0,0,0.45)]">
+                Bambu <span className="italic text-bamboo-light">do</span> Sana
               </h1>
               <p className="mt-6 font-serif italic text-xl md:text-2xl text-cream/90 max-w-2xl">
                 Sustentabilidade, cultura e ecoturismo no coração do Sana.
