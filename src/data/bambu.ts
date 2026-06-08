@@ -1,3 +1,25 @@
+// Real Sana, Macaé photos (Wikimedia Commons, CC)
+export const heroImage =
+  'https://upload.wikimedia.org/wikipedia/commons/1/1c/Cachoeira_do_Sana.jpg';
+export const valeImage =
+  'https://upload.wikimedia.org/wikipedia/commons/1/16/Sana_-_Maca%C3%A9_-_RJ_-_panoramio.jpg';
+export const peitoPomboImage =
+  'https://upload.wikimedia.org/wikipedia/commons/d/db/Peito_do_Pombo_Sana.jpg';
+export const peitoPombo2Image =
+  'https://upload.wikimedia.org/wikipedia/commons/3/39/Peito_do_Pombo_Sana_2.jpg';
+export const peitoPomboMacae =
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Peito_do_Pombo_em_Maca%C3%A9.jpg/1920px-Peito_do_Pombo_em_Maca%C3%A9.jpg';
+export const campingSana =
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/CAMPING_SANA_-_panoramio.jpg/1920px-CAMPING_SANA_-_panoramio.jpg';
+export const serraImage =
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Caminhando_pela_serra.JPG/1920px-Caminhando_pela_serra.JPG';
+export const picoImage =
+  'https://upload.wikimedia.org/wikipedia/commons/f/fb/Pico_do_Peito_de_Pombo.jpg';
+export const pedraAlturas =
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/A_pedra_das_alturas.JPG/1920px-A_pedra_das_alturas.JPG';
+export const sanaPeitoPombo =
+  'https://upload.wikimedia.org/wikipedia/commons/4/4b/Sana-peito_do_Pombo.jpg';
+
 export const navLinks = [
   { name: 'Início', href: '#hero' },
   { name: 'Sobre', href: '#sobre' },
@@ -14,8 +36,7 @@ export const projects = [
     title: 'Reflorestamento do Vale',
     description:
       'Plantio de mudas nativas da Mata Atlântica em áreas degradadas do entorno do Sana, em parceria com moradores e voluntários.',
-    image:
-      'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=80',
+    image: serraImage,
     tags: ['Reflorestamento', 'Mata Atlântica'],
   },
   {
@@ -29,17 +50,15 @@ export const projects = [
   {
     title: 'Educação Ambiental',
     description:
-      'Oficinas com escolas e visitantes sobre bioma, manejo de resíduos, bambu e cultura caiçara/serrana do território.',
-    image:
-      'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80',
+      'Oficinas com escolas e visitantes sobre bioma, manejo de resíduos, bambu e cultura serrana do território.',
+    image: campingSana,
     tags: ['Educação', 'Cultura'],
   },
   {
     title: 'Águas do Sana',
     description:
       'Monitoramento e proteção de nascentes, rios e cachoeiras que abastecem a região e sustentam a vida no vale.',
-    image:
-      'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80',
+    image: heroImage,
     tags: ['Água', 'Preservação'],
   },
   {
@@ -54,60 +73,59 @@ export const projects = [
     title: 'Resíduo Zero Sana',
     description:
       'Mutirões, compostagem e logística reversa para reduzir o impacto do turismo e da rotina local.',
-    image:
-      'https://images.unsplash.com/photo-1530587191325-3db32d826c18?auto=format&fit=crop&w=1200&q=80',
+    image: valeImage,
     tags: ['Sustentabilidade', 'Comunidade'],
   },
 ];
 
 export const routes = [
   {
-    title: 'Cachoeiras do Escorrega',
+    title: 'Cachoeira do Sana',
     type: 'Cachoeiras',
     duration: '1h • Fácil',
-    description: 'Poços cristalinos e tobogãs naturais a poucos minutos do centro do Sana.',
-    image:
-      'https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&w=1200&q=80',
+    description:
+      'Queda d’água símbolo do distrito, com poços cristalinos a poucos minutos do arraial.',
+    image: heroImage,
   },
   {
-    title: 'Trilha do Frade',
+    title: 'Peito do Pombo',
     type: 'Trilhas',
-    duration: '5h • Avançada',
-    description: 'Subida pela floresta até um mirante com vista panorâmica do vale e da serra.',
-    image:
-      'https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&q=80',
+    duration: '6h • Avançada',
+    description:
+      'Subida clássica até o pico mais famoso do Sana, com vista de 360º sobre a serra.',
+    image: peitoPomboImage,
   },
   {
-    title: 'Sabores da Serra',
-    type: 'Gastronomia',
+    title: 'Vale do Sana',
+    type: 'Mirantes',
     duration: 'Roteiro de 1 dia',
-    description: 'Restaurantes, cafés e produtores locais que celebram os sabores da montanha.',
-    image:
-      'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80',
+    description:
+      'Caminhos pelo arraial, pousadas, cafés e mirantes naturais do distrito de Macaé.',
+    image: valeImage,
   },
   {
-    title: 'Banho de Floresta',
+    title: 'Caminho da Serra',
     type: 'Experiências',
     duration: '3h • Guiada',
-    description: 'Imersão sensorial pela Mata Atlântica com práticas de presença e silêncio.',
-    image:
-      'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80',
+    description:
+      'Imersão pela Mata Atlântica com guias locais, práticas de presença e silêncio.',
+    image: serraImage,
   },
   {
-    title: 'Roda de Cultura',
-    type: 'Cultural',
-    duration: '2h • Aberto',
-    description: 'Encontros com músicos, artesãos e contadores de histórias do Sana.',
-    image:
-      'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80',
-  },
-  {
-    title: 'Mirante das Antenas',
+    title: 'Pedra das Alturas',
     type: 'Trilhas',
-    duration: '3h • Moderada',
-    description: 'Caminho clássico até um dos pontos mais altos com vista de 360º do vale.',
-    image:
-      'https://images.unsplash.com/photo-1465056836041-7f43ac27dcb5?auto=format&fit=crop&w=1200&q=80',
+    duration: '4h • Moderada',
+    description:
+      'Caminhada por um dos pontos altos do vale, com paredões e vegetação preservada.',
+    image: pedraAlturas,
+  },
+  {
+    title: 'Pico do Peito de Pombo',
+    type: 'Mirantes',
+    duration: '7h • Avançada',
+    description:
+      'Trilha mais longa até o cume, atravessando floresta, campos de altitude e vistas abertas.',
+    image: picoImage,
   },
 ];
 
@@ -126,25 +144,29 @@ export const events = [
     date: '12 Mar',
     title: 'Mutirão de Plantio',
     location: 'Vale do Sana',
-    description: 'Plantio coletivo de mudas nativas e roda de conversa sobre regeneração.',
+    description:
+      'Plantio coletivo de mudas nativas e roda de conversa sobre regeneração.',
   },
   {
     date: '05 Abr',
     title: 'Feira Agroecológica',
-    location: 'Centro do Sana',
-    description: 'Produtores locais, alimentos orgânicos, artesanato e gastronomia da serra.',
+    location: 'Arraial do Sana',
+    description:
+      'Produtores locais, alimentos orgânicos, artesanato e gastronomia da serra.',
   },
   {
     date: '20 Abr',
     title: 'Festival do Bambu',
     location: 'Sede Bambu do Sana',
-    description: 'Oficinas de bioconstrução, música e exposição de artesãos do território.',
+    description:
+      'Oficinas de bioconstrução, música e exposição de artesãos do território.',
   },
   {
     date: '11 Mai',
     title: 'Caminhada das Águas',
     location: 'Nascentes do Sana',
-    description: 'Trilha guiada com educadores ambientais e monitoramento participativo.',
+    description:
+      'Trilha guiada com educadores ambientais e monitoramento participativo.',
   },
 ];
 
@@ -152,35 +174,38 @@ export const directory = [
   {
     name: 'Pousada Mata Viva',
     category: 'Pousada',
-    description: 'Hospedagem aconchegante em meio à floresta, com práticas sustentáveis.',
-    image:
-      'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=900&q=80',
+    description:
+      'Hospedagem aconchegante em meio à floresta, com práticas sustentáveis.',
+    image: campingSana,
   },
   {
     name: 'Restaurante Raízes',
     category: 'Gastronomia',
-    description: 'Cozinha autoral com ingredientes da agrofloresta e produtores locais.',
+    description:
+      'Cozinha autoral com ingredientes da agrofloresta e produtores locais.',
     image:
       'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80',
   },
   {
     name: 'Guia Caminhos do Sana',
     category: 'Guia local',
-    description: 'Trilhas, cachoeiras e experiências guiadas por moradores da região.',
-    image:
-      'https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=900&q=80',
+    description:
+      'Trilhas, cachoeiras e experiências guiadas por moradores da região.',
+    image: peitoPombo2Image,
   },
   {
     name: 'Ateliê de Bambu',
     category: 'Artesanato',
-    description: 'Peças utilitárias e artísticas feitas com bambu cultivado localmente.',
+    description:
+      'Peças utilitárias e artísticas feitas com bambu cultivado localmente.',
     image:
       'https://images.unsplash.com/photo-1528283648649-33347faa5d9e?auto=format&fit=crop&w=900&q=80',
   },
   {
     name: 'Café da Serra',
     category: 'Gastronomia',
-    description: 'Cafés especiais, pães de fermentação natural e doces da casa.',
+    description:
+      'Cafés especiais, pães de fermentação natural e doces da casa.',
     image:
       'https://images.unsplash.com/photo-1507914372368-b2b085b925a1?auto=format&fit=crop&w=900&q=80',
   },
@@ -188,8 +213,7 @@ export const directory = [
     name: 'Permacultura Sana',
     category: 'Negócio ecológico',
     description: 'Consultoria, cursos e implantação de sistemas regenerativos.',
-    image:
-      'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=900&q=80',
+    image: sanaPeitoPombo,
   },
 ];
 
@@ -198,8 +222,7 @@ export const posts = [
     title: 'Por que regenerar é mais do que preservar',
     excerpt:
       'Conheça a filosofia regenerativa que move o Bambu do Sana e como ela transforma o jeito de habitar o vale.',
-    image:
-      'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80',
+    image: valeImage,
     category: 'Sustentabilidade',
     date: '08 Fev 2025',
   },
@@ -207,8 +230,7 @@ export const posts = [
     title: 'Roteiro de inverno: cachoeiras e fogueiras',
     excerpt:
       'Um guia afetivo para visitar o Sana nos meses mais frios, com dicas de roteiros, pousadas e experiências.',
-    image:
-      'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=80',
+    image: heroImage,
     category: 'Turismo',
     date: '02 Jul 2024',
   },
@@ -216,8 +238,7 @@ export const posts = [
     title: 'Histórias do vale: vozes da comunidade',
     excerpt:
       'Retratos e relatos de moradores que constroem, cuidam e celebram o território do Sana há décadas.',
-    image:
-      'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80',
+    image: peitoPomboMacae,
     category: 'Comunidade',
     date: '15 Out 2024',
   },
