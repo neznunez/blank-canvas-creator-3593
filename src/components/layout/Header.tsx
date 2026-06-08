@@ -28,18 +28,18 @@ export function Header() {
           <span
             className={cn(
               'inline-flex items-center justify-center size-9 rounded-full transition-colors',
-              isScrolled ? 'bg-forest text-cream' : 'bg-white/20 text-white backdrop-blur-md'
+              isScrolled ? 'bg-forest text-white' : 'bg-white/20 text-white backdrop-blur-md'
             )}
           >
             <Leaf className="size-4 group-hover:rotate-12 transition-transform" />
           </span>
           <span
             className={cn(
-              'font-serif text-xl tracking-tight transition-colors',
+              'font-display text-xl tracking-wide transition-colors',
               isScrolled ? 'text-foreground' : 'text-white'
             )}
           >
-            Bambu <span className="italic text-bamboo">do Sana</span>
+            Bambu <span className="font-script text-bamboo">do Sana</span>
           </span>
         </a>
 
@@ -61,7 +61,7 @@ export function Header() {
         <div className="hidden lg:block">
           <Button
             asChild
-            className="rounded-full bg-forest hover:bg-forest-deep text-cream px-5"
+            className="rounded-full bg-forest hover:bg-moss text-white px-5"
           >
             <a href="#contato">Visitar o Sana</a>
           </Button>
@@ -82,9 +82,9 @@ export function Header() {
                 <Menu className="size-5" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-80 bg-cream">
+            <SheetContent side="right" className="w-80 bg-card">
               <div className="flex items-center justify-between mb-8">
-                <span className="font-serif text-xl">Bambu do Sana</span>
+                <span className="font-display text-xl">Bambu do Sana</span>
                 <button onClick={() => setOpen(false)} aria-label="Fechar">
                   <X className="size-5" />
                 </button>
@@ -103,7 +103,7 @@ export function Header() {
                 <a
                   href="#contato"
                   onClick={() => setOpen(false)}
-                  className="mt-4 inline-flex justify-center rounded-full bg-forest text-cream py-3"
+                  className="mt-4 inline-flex justify-center rounded-full bg-forest text-white py-3"
                 >
                   Visitar o Sana
                 </a>

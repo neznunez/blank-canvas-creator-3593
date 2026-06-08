@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   ArrowRight,
@@ -11,6 +12,7 @@ import {
   Users,
   Sparkles,
 } from 'lucide-react';
+import { HeroBackground, HeroSlideIndicators } from '@/components/hero/HeroBackground';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { Button } from '@/components/ui/button';
 import {
@@ -48,15 +50,15 @@ function SectionHeader({
       {...fadeUp}
       className={`max-w-3xl ${align === 'center' ? 'mx-auto text-center' : ''} mb-12 md:mb-16`}
     >
-      <div
-        className={`inline-flex items-center gap-2 rounded-full bg-secondary/60 text-forest px-3 py-1 text-xs tracking-[0.2em] uppercase ${
+      <p
+        className={`eyebrow-artisan inline-flex items-center gap-2 text-bamboo ${
           align === 'center' ? '' : ''
         }`}
       >
         <Sprout className="size-3.5" />
         {eyebrow}
-      </div>
-      <h2 className="mt-5 font-serif text-4xl md:text-5xl lg:text-6xl text-foreground text-balance">
+      </p>
+      <h2 className="mt-4 title-section text-4xl md:text-5xl lg:text-6xl text-foreground text-balance">
         {title}
       </h2>
       {description && (
@@ -69,23 +71,25 @@ function SectionHeader({
 }
 
 export default function Home() {
+  const [heroSlide, setHeroSlide] = useState(0);
+
   return (
     <>
       <SEOHead
-        title="Bambu do Sana"
-        description="Portal de ecoturismo, sustentabilidade e cultura no Sana, Rio de Janeiro."
+        image={heroImage}
+        imageAlt="Cachoeira do Sana, Macaé — RJ"
       />
 
       {/* HERO */}
       <section id="hero" className="relative min-h-[100svh] w-full overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src={heroImage}
-            alt="Cachoeira do Sana, Macaé — RJ"
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-forest-deep/55 via-forest-deep/30 to-forest-deep/80" />
-          <div className="absolute inset-0 bg-gradient-leaf mix-blend-soft-light" />
+          <HeroBackground onIndexChange={setHeroSlide} />
+          <div className="overlay-hero" />
+          <div className="overlay-hero-scrim" />
+          <div className="absolute inset-0 bg-gradient-leaf mix-blend-soft-light opacity-40" />
+          <div className="absolute bottom-8 left-6 lg:left-10 z-10">
+            <HeroSlideIndicators activeIndex={heroSlide} />
+          </div>
         </div>
 
         {/* Organic floating shapes */}
@@ -100,17 +104,17 @@ export default function Home() {
               transition={{ duration: 1, ease: 'easeOut' }}
               className="max-w-3xl"
             >
-              <span className="inline-flex items-center gap-2 rounded-full glass-dark px-4 py-1.5 text-xs tracking-[0.25em] uppercase text-cream">
-                <Leaf className="size-3.5 text-bamboo animate-sway" />
+              <span className="badge-image px-4 py-1.5 text-xs tracking-[0.25em] uppercase">
+                <Leaf className="size-3.5 animate-sway" />
                 Sana • Rio de Janeiro • Brasil
               </span>
-              <h1 className="mt-6 font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[1.02] text-balance drop-shadow-[0_4px_24px_rgba(0,0,0,0.45)]">
-                Bambu <span className="italic text-bamboo-light">do</span> Sana
+              <h1 className="mt-6 title-display text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] text-[hsl(45_35%_94%)] text-balance title-artisan-shadow hero-text-shadow-strong">
+                Bambu <span className="font-script text-[hsl(38_42%_72%)]">do</span> Sana
               </h1>
-              <p className="mt-6 font-serif italic text-xl md:text-2xl text-cream/90 max-w-2xl">
+              <p className="mt-6 font-script text-xl md:text-2xl text-[hsl(45_30%_92%)] max-w-2xl hero-text-shadow">
                 Sustentabilidade, cultura e ecoturismo no coração do Sana.
               </p>
-              <p className="mt-4 text-cream/80 max-w-xl leading-relaxed">
+              <p className="mt-4 text-white/95 max-w-xl leading-relaxed hero-text-shadow">
                 Um portal vivo para explorar trilhas, cachoeiras, projetos
                 regenerativos e a comunidade que mantém este vale pulsando.
               </p>
@@ -130,7 +134,7 @@ export default function Home() {
                   asChild
                   variant="outline"
                   size="lg"
-                  className="rounded-full border-cream/40 bg-transparent text-cream hover:bg-cream hover:text-forest-deep px-7 h-12 text-base"
+                  className="rounded-full border-white/50 bg-forest-deep/35 backdrop-blur-sm text-white hover:bg-white hover:text-forest-deep px-7 h-12 text-base shadow-[0_4px_20px_rgba(0,0,0,0.35)]"
                 >
                   <a href="#projetos">Projetos Sustentáveis</a>
                 </Button>
@@ -139,17 +143,10 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Scroll cue */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-cream/70 text-xs tracking-[0.3em] uppercase">
-          <div className="flex flex-col items-center gap-2">
-            <span>Role</span>
-            <div className="h-10 w-px bg-cream/40 animate-pulse" />
-          </div>
-        </div>
       </section>
 
       {/* SOBRE */}
-      <section id="sobre" className="relative py-24 md:py-32 px-6 lg:px-10 overflow-hidden">
+      <section id="sobre" className="relative py-24 md:py-32 px-6 lg:px-10 overflow-hidden bg-background">
         <div className="absolute -top-32 right-0 size-[28rem] rounded-full bg-bamboo/10 blur-3xl" />
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
           <motion.div {...fadeUp} className="relative">
@@ -160,8 +157,8 @@ export default function Home() {
                 className="w-full h-[520px] object-cover"
               />
             </div>
-            <div className="absolute -bottom-8 -right-4 md:-right-8 glass rounded-2xl p-5 max-w-[240px] shadow-soft">
-              <p className="font-serif italic text-foreground text-lg">
+            <div className="absolute -bottom-8 -right-4 md:-right-8 rounded-2xl border border-border bg-card/90 backdrop-blur-md p-5 max-w-[240px] shadow-soft">
+              <p className="font-script text-foreground text-lg">
                 "A floresta nos lembra de uma forma mais lenta de viver."
               </p>
             </div>
@@ -185,7 +182,7 @@ export default function Home() {
                   className="rounded-2xl bg-card border border-border p-5 shadow-soft hover:-translate-y-1 transition-transform"
                 >
                   <Icon className="size-5 text-bamboo" />
-                  <p className="mt-3 font-serif text-foreground">{label}</p>
+                  <p className="mt-3 title-card text-lg text-foreground">{label}</p>
                 </div>
               ))}
             </div>
@@ -196,7 +193,7 @@ export default function Home() {
       {/* PROJETOS */}
       <section
         id="projetos"
-        className="relative py-24 md:py-32 px-6 lg:px-10 bg-secondary/40"
+        className="relative py-24 md:py-32 px-6 lg:px-10 bg-surface-green-alt"
       >
         <div className="max-w-7xl mx-auto">
           <SectionHeader
@@ -220,12 +217,12 @@ export default function Home() {
                     alt={p.title}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/60 to-transparent" />
+                  <div className="overlay-image-bottom-sm" />
                   <div className="absolute top-3 left-3 flex gap-2 flex-wrap">
                     {p.tags.map((t) => (
                       <span
                         key={t}
-                        className="rounded-full glass-dark px-3 py-1 text-[11px] tracking-wide text-cream"
+                        className="badge-image px-3 py-1 text-[11px] tracking-wide"
                       >
                         {t}
                       </span>
@@ -233,7 +230,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="font-serif text-2xl text-foreground">{p.title}</h3>
+                  <h3 className="title-card text-2xl text-foreground">{p.title}</h3>
                   <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                     {p.description}
                   </p>
@@ -251,7 +248,7 @@ export default function Home() {
       </section>
 
       {/* ROTAS */}
-      <section id="rotas" className="relative py-24 md:py-32 px-6 lg:px-10">
+      <section id="rotas" className="relative py-24 md:py-32 px-6 lg:px-10 bg-background">
         <div className="max-w-7xl mx-auto">
           <SectionHeader
             eyebrow="Rotas turísticas"
@@ -273,14 +270,14 @@ export default function Home() {
                   alt={r.title}
                   className="h-[340px] w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/30 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-cream">
-                  <span className="inline-flex items-center gap-1.5 rounded-full glass-dark px-3 py-1 text-[11px] tracking-wide">
+                <div className="overlay-image-bottom" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <span className="badge-image px-3 py-1 text-[11px] tracking-wide">
                     <Compass className="size-3" /> {r.type}
                   </span>
-                  <h3 className="mt-3 font-serif text-2xl">{r.title}</h3>
-                  <p className="mt-1 text-sm text-cream/80">{r.description}</p>
-                  <p className="mt-3 text-xs uppercase tracking-[0.2em] text-bamboo">
+                  <h3 className="mt-3 title-card text-2xl text-white">{r.title}</h3>
+                  <p className="mt-1 text-sm text-white/90">{r.description}</p>
+                  <p className="mt-3 text-xs uppercase tracking-[0.2em] text-bamboo-light">
                     {r.duration}
                   </p>
                 </div>
@@ -293,20 +290,20 @@ export default function Home() {
       {/* MAPA */}
       <section
         id="mapa"
-        className="relative py-24 md:py-32 px-6 lg:px-10 bg-forest text-cream overflow-hidden"
+        className="relative py-24 md:py-32 px-6 lg:px-10 bg-forest text-white overflow-hidden"
       >
-        <div className="absolute inset-0 bg-gradient-forest opacity-80" />
+        <div className="absolute inset-0 bg-gradient-forest opacity-[0.65]" />
         <div className="absolute -top-40 -left-20 size-[30rem] rounded-full bg-bamboo/20 blur-3xl animate-float-slow" />
         <div className="absolute bottom-0 right-0 size-[26rem] rounded-full bg-moss/40 blur-3xl animate-float-slow [animation-delay:-3s]" />
         <div className="relative max-w-7xl mx-auto grid lg:grid-cols-5 gap-10 items-center">
           <div className="lg:col-span-2">
-            <span className="inline-flex items-center gap-2 rounded-full glass-dark px-3 py-1 text-xs tracking-[0.2em] uppercase">
-              <MapPin className="size-3.5 text-bamboo" /> Mapa interativo
+            <span className="badge-image px-3 py-1 text-xs tracking-[0.2em] uppercase">
+              <MapPin className="size-3.5" /> Mapa interativo
             </span>
-            <h2 className="mt-5 font-serif text-4xl md:text-5xl lg:text-6xl text-cream text-balance">
+            <h2 className="mt-4 title-section text-4xl md:text-5xl lg:text-6xl text-white text-balance">
               Explore o Sana ponto a ponto.
             </h2>
-            <p className="mt-5 text-cream/80 leading-relaxed max-w-md">
+            <p className="mt-5 text-white/90 leading-relaxed max-w-md">
               Um mapa colaborativo para descobrir cachoeiras, trilhas,
               pousadas, restaurantes, mirantes e projetos sustentáveis do
               território. Em breve, totalmente interativo.
@@ -315,7 +312,7 @@ export default function Home() {
               {mapCategories.map((c) => (
                 <button
                   key={c}
-                  className="rounded-full border border-cream/20 px-4 py-1.5 text-xs tracking-wide hover:bg-bamboo hover:text-forest-deep hover:border-bamboo transition-colors"
+                  className="rounded-full border border-white/22 bg-white/10 px-4 py-1.5 text-xs tracking-wide text-white hover:bg-bamboo hover:text-forest-deep hover:border-bamboo transition-colors"
                 >
                   {c}
                 </button>
@@ -324,14 +321,14 @@ export default function Home() {
           </div>
 
           <div className="lg:col-span-3">
-            <div className="relative rounded-[2rem] overflow-hidden glass-dark p-2 shadow-organic">
+            <div className="relative rounded-[2rem] overflow-hidden border border-white/15 bg-forest/30 p-2 shadow-organic">
               <div className="relative rounded-[1.6rem] overflow-hidden h-[420px]">
                 <img
                   src={valeImage}
                   alt="Vale do Sana, Macaé — RJ"
                   className="h-full w-full object-cover"
                 />
-                <div className="absolute inset-0 bg-forest-deep/40" />
+                <div className="overlay-image-bottom-sm" />
                 {/* Pin markers */}
                 {[
                   { top: '30%', left: '25%', label: 'Cachoeira' },
@@ -344,13 +341,13 @@ export default function Home() {
                     className="absolute -translate-x-1/2 -translate-y-full flex flex-col items-center"
                     style={{ top: m.top, left: m.left }}
                   >
-                    <div className="rounded-full glass-dark px-3 py-1 text-[11px] tracking-wide whitespace-nowrap">
+                    <div className="badge-image px-3 py-1 text-[11px] tracking-wide whitespace-nowrap">
                       {m.label}
                     </div>
                     <div className="mt-1 size-3 rounded-full bg-bamboo ring-4 ring-bamboo/30 animate-pulse" />
                   </div>
                 ))}
-                <div className="absolute bottom-4 left-4 rounded-full glass-dark px-4 py-2 text-xs">
+                <div className="absolute bottom-4 left-4 badge-image px-4 py-2 text-xs">
                   Mapa interativo • em breve
                 </div>
               </div>
@@ -360,7 +357,7 @@ export default function Home() {
       </section>
 
       {/* EVENTOS */}
-      <section id="eventos" className="relative py-24 md:py-32 px-6 lg:px-10">
+      <section id="eventos" className="relative py-24 md:py-32 px-6 lg:px-10 bg-background">
         <div className="max-w-7xl mx-auto">
           <SectionHeader
             eyebrow="Agenda"
@@ -377,7 +374,7 @@ export default function Home() {
                 transition={{ duration: 0.6 }}
                 className="flex gap-5 rounded-3xl bg-card border border-border p-6 shadow-soft hover:shadow-organic hover:-translate-y-0.5 transition-all"
               >
-                <div className="shrink-0 w-20 h-24 rounded-2xl bg-forest text-cream flex flex-col items-center justify-center font-serif">
+                <div className="shrink-0 w-20 h-24 rounded-2xl bg-forest text-white flex flex-col items-center justify-center font-serif">
                   <span className="text-2xl leading-none">
                     {e.date.split(' ')[0]}
                   </span>
@@ -389,7 +386,7 @@ export default function Home() {
                   <div className="flex items-center gap-2 text-xs text-muted-foreground">
                     <Calendar className="size-3.5" /> {e.location}
                   </div>
-                  <h3 className="mt-1 font-serif text-2xl text-foreground">
+                  <h3 className="mt-1 title-card text-2xl text-foreground">
                     {e.title}
                   </h3>
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -405,7 +402,7 @@ export default function Home() {
       {/* DIRETÓRIO */}
       <section
         id="diretorio"
-        className="relative py-24 md:py-32 px-6 lg:px-10 bg-secondary/40"
+        className="relative py-24 md:py-32 px-6 lg:px-10 bg-surface-green-alt"
       >
         <div className="max-w-7xl mx-auto">
           <SectionHeader
@@ -434,7 +431,7 @@ export default function Home() {
                   <span className="text-[11px] tracking-[0.2em] uppercase text-bamboo">
                     {d.category}
                   </span>
-                  <h3 className="mt-1 font-serif text-xl text-foreground">
+                  <h3 className="mt-1 title-card text-xl text-foreground">
                     {d.name}
                   </h3>
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -448,7 +445,7 @@ export default function Home() {
       </section>
 
       {/* BLOG */}
-      <section id="blog" className="relative py-24 md:py-32 px-6 lg:px-10">
+      <section id="blog" className="relative py-24 md:py-32 px-6 lg:px-10 bg-background">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
             <SectionHeader
@@ -486,7 +483,7 @@ export default function Home() {
                     {p.date}
                   </span>
                 </div>
-                <h3 className="mt-3 font-serif text-2xl text-foreground group-hover:text-bamboo transition-colors">
+                <h3 className="mt-3 title-card text-2xl text-foreground group-hover:text-bamboo transition-colors">
                   {p.title}
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -500,18 +497,18 @@ export default function Home() {
 
       {/* CTA Final */}
       <section className="relative py-24 md:py-32 px-6 lg:px-10 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-forest animate-flow opacity-85" />
+        <div className="absolute inset-0 bg-gradient-forest animate-flow opacity-[0.72]" />
         <div
           className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-overlay"
           style={{ backgroundImage: `url(${heroImage})` }}
         />
-        <div className="relative max-w-4xl mx-auto text-center text-cream">
-          <Droplets className="mx-auto size-8 text-bamboo animate-sway" />
-          <h2 className="mt-6 font-serif text-4xl md:text-6xl text-balance">
+        <div className="relative max-w-4xl mx-auto text-center text-white">
+          <Droplets className="mx-auto size-8 text-bamboo-light animate-sway" />
+          <h2 className="mt-6 title-section text-4xl md:text-6xl text-balance text-[hsl(45_35%_94%)]">
             Venha conhecer o vale. <br />
-            <span className="italic text-bamboo">Saia diferente.</span>
+            <span className="font-script text-[hsl(38_42%_72%)]">Saia diferente.</span>
           </h2>
-          <p className="mt-5 text-cream/85 max-w-xl mx-auto leading-relaxed">
+          <p className="mt-5 text-white/90 max-w-xl mx-auto leading-relaxed">
             Sustentabilidade, comunidade, floresta e arte se encontram aqui.
             Planeje sua visita ou apoie um dos nossos projetos.
           </p>
@@ -529,7 +526,7 @@ export default function Home() {
               asChild
               variant="outline"
               size="lg"
-              className="rounded-full border-cream/40 bg-transparent text-cream hover:bg-cream hover:text-forest-deep px-7 h-12 text-base"
+              className="rounded-full border-white/40 bg-transparent text-white hover:bg-white hover:text-forest-deep px-7 h-12 text-base"
             >
               <a href="#contato">Apoiar a iniciativa</a>
             </Button>

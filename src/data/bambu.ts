@@ -20,6 +20,39 @@ export const pedraAlturas =
 export const sanaPeitoPombo =
   'https://upload.wikimedia.org/wikipedia/commons/4/4b/Sana-peito_do_Pombo.jpg';
 
+export const siteSeo = {
+  name: 'Bambu do Sana',
+  tagline: 'Sustentabilidade, cultura e ecoturismo no coração do Sana.',
+  description:
+    'Portal de ecoturismo regenerativo no Sana, Macaé — RJ. Trilhas, cachoeiras, projetos sustentáveis, mapa, eventos e diretório local.',
+  siteUrl: 'https://bambudosana.com.br',
+  locale: 'pt_BR',
+  themeColor: '#2d5a40',
+  keywords: [
+    'Sana',
+    'Macaé',
+    'Rio de Janeiro',
+    'ecoturismo',
+    'turismo sustentável',
+    'Mata Atlântica',
+    'cachoeiras',
+    'trilhas',
+    'Peito do Pombo',
+    'Bambu do Sana',
+  ],
+  twitterCard: 'summary_large_image' as const,
+};
+
+export const heroSlides = [
+  { src: heroImage, alt: 'Cachoeira do Sana, Macaé — RJ' },
+  { src: valeImage, alt: 'Vale do Sana, Macaé — RJ' },
+  { src: peitoPomboImage, alt: 'Vista do Peito do Pombo, Sana' },
+  { src: picoImage, alt: 'Pico do Peito de Pombo, Sana' },
+  { src: serraImage, alt: 'Trilha pela serra do Sana' },
+  { src: campingSana, alt: 'Natureza e camping no Sana' },
+  { src: pedraAlturas, alt: 'Pedra das Alturas, Sana' },
+];
+
 export const navLinks = [
   { name: 'Início', href: '#hero' },
   { name: 'Sobre', href: '#sobre' },

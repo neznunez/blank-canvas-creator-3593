@@ -6,37 +6,39 @@ All colors MUST be HSL.
 */
 
 :root {
-  /* Bambu do Sana — natural, organic palette */
-  --background: hsl(80 35% 96%);
-  --foreground: hsl(140 25% 12%);
-  --card: hsl(45 30% 99%);
-  --card-foreground: hsl(140 25% 12%);
-  --popover: hsl(45 30% 99%);
-  --popover-foreground: hsl(140 25% 12%);
+  /* Bambu do Sana — verde escuro suave (sem fundos brancos) */
+  --background: hsl(142 24% 15%);
+  --foreground: hsl(45 30% 94%);
+  --card: hsl(142 22% 19%);
+  --card-foreground: hsl(45 30% 94%);
+  --popover: hsl(142 22% 19%);
+  --popover-foreground: hsl(45 30% 94%);
   --primary: hsl(130 30% 48%);
   --primary-foreground: hsl(45 35% 99%);
-  --secondary: hsl(85 45% 94%);
-  --secondary-foreground: hsl(140 30% 25%);
-  --muted: hsl(50 20% 92%);
-  --muted-foreground: hsl(120 10% 38%);
+  --secondary: hsl(140 22% 24%);
+  --secondary-foreground: hsl(45 30% 94%);
+  --muted: hsl(142 20% 21%);
+  --muted-foreground: hsl(80 12% 70%);
   --accent: hsl(85 50% 62%);
   --accent-foreground: hsl(140 35% 12%);
   --destructive: hsl(0 84.2% 60.2%);
   --destructive-foreground: hsl(0 0% 98%);
-  --border: hsl(60 15% 88%);
-  --input: hsl(60 15% 88%);
+  --border: hsl(140 18% 28%);
+  --input: hsl(140 18% 28%);
   --ring: hsl(140 35% 30%);
   --radius: 1rem;
 
   /* Custom Bambu palette tokens */
   --bamboo: hsl(85 60% 65%);
   --bamboo-light: hsl(85 70% 85%);
-  --forest: hsl(135 35% 55%);
-  --forest-deep: hsl(145 35% 35%);
-  --moss: hsl(95 40% 62%);
+  --forest: hsl(135 36% 58%);
+  --forest-deep: hsl(145 34% 40%);
+  --moss: hsl(95 38% 58%);
   --sand: hsl(40 35% 88%);
   --earth: hsl(28 30% 45%);
   --cream: hsl(45 50% 96%);
+  --surface-green: hsl(142 24% 17%);
+  --surface-green-alt: hsl(140 22% 21%);
 
   --gradient-forest: linear-gradient(135deg, hsl(140 35% 35%) 0%, hsl(95 35% 45%) 50%, hsl(85 45% 55%) 100%);
   --gradient-leaf: linear-gradient(180deg, hsl(85 40% 55% / 0.15) 0%, hsl(140 35% 22% / 0.05) 100%);
@@ -76,34 +78,36 @@ All colors MUST be HSL.
 }
 
 .dark {
-  --background: hsl(150 25% 7%);
+  --background: hsl(145 24% 13%);
   --foreground: hsl(45 30% 94%);
-  --card: hsl(150 22% 10%);
+  --card: hsl(145 22% 17%);
   --card-foreground: hsl(45 30% 94%);
-  --popover: hsl(150 22% 10%);
+  --popover: hsl(145 22% 17%);
   --popover-foreground: hsl(45 30% 94%);
   --primary: hsl(85 45% 65%);
   --primary-foreground: hsl(150 30% 10%);
-  --secondary: hsl(150 20% 16%);
+  --secondary: hsl(140 22% 23%);
   --secondary-foreground: hsl(45 30% 94%);
-  --muted: hsl(150 18% 14%);
-  --muted-foreground: hsl(80 12% 65%);
+  --muted: hsl(145 20% 20%);
+  --muted-foreground: hsl(80 12% 68%);
   --accent: hsl(85 40% 55%);
   --accent-foreground: hsl(150 30% 10%);
   --destructive: hsl(0 62.8% 30.6%);
   --destructive-foreground: hsl(0 0% 98%);
-  --border: hsl(150 18% 18%);
-  --input: hsl(150 18% 18%);
+  --border: hsl(140 18% 26%);
+  --input: hsl(140 18% 26%);
   --ring: hsl(85 45% 55%);
 
   --bamboo: hsl(85 45% 60%);
-  --bamboo-light: hsl(85 35% 45%);
-  --forest: hsl(140 30% 25%);
-  --forest-deep: hsl(150 35% 8%);
-  --moss: hsl(95 22% 45%);
-  --sand: hsl(40 15% 25%);
+  --bamboo-light: hsl(85 38% 50%);
+  --forest: hsl(138 32% 32%);
+  --forest-deep: hsl(148 32% 16%);
+  --moss: hsl(95 28% 50%);
+  --sand: hsl(40 15% 28%);
   --earth: hsl(28 25% 40%);
   --cream: hsl(45 15% 14%);
+  --surface-green: hsl(145 24% 15%);
+  --surface-green-alt: hsl(140 22% 19%);
 
   --gradient-forest: linear-gradient(135deg, hsl(150 35% 12%) 0%, hsl(140 30% 18%) 50%, hsl(95 25% 25%) 100%);
   --gradient-leaf: linear-gradient(180deg, hsl(85 40% 35% / 0.25) 0%, hsl(150 35% 8% / 0.1) 100%);
@@ -164,8 +168,11 @@ All colors MUST be HSL.
   --color-sand: var(--sand);
   --color-earth: var(--earth);
   --color-cream: var(--cream);
+  --color-surface-green: var(--surface-green);
+  --color-surface-green-alt: var(--surface-green-alt);
 
-  --font-serif: 'Fraunces', ui-serif, Georgia, serif;
+  --font-display: 'Gloock', ui-serif, Georgia, serif;
+  --font-serif: 'Cormorant Garamond', ui-serif, Georgia, serif;
   --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
 
   --color-sidebar: var(--sidebar-background);
@@ -231,10 +238,17 @@ All colors MUST be HSL.
     font-feature-settings: "ss01", "cv11";
   }
 
-  h1, h2, h3, h4, h5 {
-    font-family: var(--font-serif);
+  h1, h2 {
+    font-family: var(--font-display);
     font-weight: 400;
-    letter-spacing: -0.015em;
+    letter-spacing: 0.01em;
+    line-height: 1.08;
+  }
+
+  h3, h4, h5 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    letter-spacing: 0.01em;
   }
 
   html {
@@ -252,8 +266,45 @@ All colors MUST be HSL.
     display: none;
   }
 
+  .font-display { font-family: var(--font-display); }
   .font-serif { font-family: var(--font-serif); }
   .font-sans { font-family: var(--font-sans); }
+  .font-script { font-family: var(--font-serif); font-style: italic; font-weight: 500; }
+
+  .title-display {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: 0.015em;
+    line-height: 1.05;
+  }
+
+  .title-section {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+  }
+
+  .title-card {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    letter-spacing: 0.015em;
+    line-height: 1.2;
+  }
+
+  .eyebrow-artisan {
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+  }
+
+  .title-artisan-shadow {
+    text-shadow:
+      0 1px 0 rgba(12, 28, 18, 0.5),
+      0 2px 20px rgba(12, 28, 18, 0.35);
+  }
 
   .text-balance { text-wrap: balance; }
 
@@ -276,6 +327,86 @@ All colors MUST be HSL.
     backdrop-filter: blur(20px) saturate(160%);
     -webkit-backdrop-filter: blur(20px) saturate(160%);
     border: 1px solid hsl(0 0% 100% / 0.12);
+  }
+
+  .badge-image {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    border-radius: 9999px;
+    background: var(--forest-deep);
+    color: white;
+    font-weight: 500;
+  }
+
+  .overlay-hero {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--forest-deep) 40%, transparent),
+      transparent 42%,
+      color-mix(in srgb, var(--forest-deep) 58%, transparent)
+    );
+    pointer-events: none;
+  }
+
+  /* Escurece a área do texto sem apagar a foto inteira */
+  .overlay-hero-scrim {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        100deg,
+        color-mix(in srgb, var(--forest-deep) 88%, transparent) 0%,
+        color-mix(in srgb, var(--forest-deep) 62%, transparent) 42%,
+        color-mix(in srgb, var(--forest-deep) 28%, transparent) 62%,
+        transparent 78%
+      ),
+      linear-gradient(
+        to top,
+        color-mix(in srgb, var(--forest-deep) 72%, transparent) 0%,
+        transparent 58%
+      );
+    pointer-events: none;
+  }
+
+  .hero-text-shadow {
+    text-shadow:
+      0 2px 16px rgba(0, 0, 0, 0.65),
+      0 1px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-text-shadow-strong {
+    text-shadow:
+      0 4px 28px rgba(0, 0, 0, 0.75),
+      0 2px 8px rgba(0, 0, 0, 0.55);
+  }
+
+  .overlay-image-bottom {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    height: 38%;
+    background: linear-gradient(
+      to top,
+      color-mix(in srgb, var(--forest-deep) 54%, transparent),
+      transparent
+    );
+    pointer-events: none;
+  }
+
+  .overlay-image-bottom-sm {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    height: 30%;
+    background: linear-gradient(
+      to top,
+      color-mix(in srgb, var(--forest-deep) 46%, transparent),
+      transparent
+    );
+    pointer-events: none;
   }
 }
 
